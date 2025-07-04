@@ -1,0 +1,75 @@
+Describe software requider 
+
+
+Describe the major Linux distro families
+RHEL(fedora(oracle linux)) - enterprises
+SUSE(sles) - YaST(administracja)
+Debian(ubuntu) - takie najbardziej standardowe
+
+
+Define common linux terms
+Kernel - jądro linuxa, zarządza podzespołami, procesami i systemem oraz umożliwia komunikację pomiędzy ww rzeczami
+
+distribution - (distros) kompletne, operujące systemy z jądrem kernelowym
+
+BIOS - Basic Input and Output System - firmware, szuka jakiegoś dysku danych i odpala bootloader na nim(bootloared jest na MBR(Master Boot Record)
+UEFI - Unified Extensible Firmware Interface - firmware,  więcej możliwości od BIOSu, bootloader na EFI System Partition(ESP), tak naprawde nie potrzebuje bootloadera
+bootloader - wczytuje system operacyjny na RAM i go uruchamia, jest interfejsem pomiędzy firmwarem oraz systemem operacyjnym
+popularnym bootloaderem na linuxie jest GRUB
+
+service - proces działający w tle dostarczający odpowiednie funkcjonalności takie jak bazy danych, serwer www czy demon logowania, komenda systemctl, należy tutaj wspomnieć o daemonach czyli demonach (diaboł lol) to proces który nie ma bezpośredniego kontaktu z użytkownikiem, służy do stałego świadcznenia usług, sieciowych, logowania itd
+
+filesystem - cały system plików rozpoczynając od roota aż do najgłębszych i najdalszych zakątków linuxa
+
+X Window system - system dający graficzny, okienkowy sposób na poerowanie na linuxie 
+
+desktop enviornment - GUI do linuxa po prsotu graphic User Interface 
+
+command line - no qrwa, wiem co to command line
+
+Discuss components of linux distro
+
+zawartość foldera root:
+
+- bin -> usr/bin       - Podstawowe programy binarne (np. ls, cp, mv)
+- boot                 - Pliki startowe systemu (kernel, grub) – ważne dla uruchamiania systemu
+- dev                  - { Manager urządzeń } Pliki reprezentujące urządzenia (np. sda1, tty, null), większość pliku generowana przybootowaniu albo podczas podpinania nowego sprzętu
+- etc                  - Pliki konfiguracyjne całego systemu (np. passwd, ssh/sshd_config, hostname)
+- home                 - { C:\Users } Ktalog użytkowników (np. /home/loman) -tu trzymasz swoje pliki
+- lib -> usr/lib       - Biblioteki współdzielone (np. .so - coś jak .ddl w Windowsie)
+- lib64 -> usr/lib64   - Biblioteki współdzielone (np. .so - coś jak .ddl w Windowsie)
+- lost+found           - Miejsce na pliki odzyskane po błędach dysku (system plików ext4)
+- media                - { E; } Tymczasowe punkty montowania: np. pendrive, ISO
+- mnt                  - { D; } Tymczasowe punkty montowania: np. pendrive, ISO, mało używany aktualnie
+- opt                  - Miejsce na ręcznie zainsalowane programy(np. pakiety spoza managera)
+- proc                 - System plików wirtualny - informacje o procesach i systemie (np. /proc/cpuinfo)
+- root                 - {C:\} - Katalog domowy użytkownika root
+- run                  - Dane tymczasowe, które powstają po starcie systemu (np.sockety, pidy)
+- sbin -> usr/sbin     - Podstawowe narzędzia administracyjne (np. ifconfig, reboot, mount)
+- snap                 - Katalog dla aplikacji zainstalowanych przez Snap (alteratywa dla apt)
+- srv                  - Pliki dla usług sieciowych, (np. strony WWW, FTP)
+- sys                  - Kolejny wirtualny system plików - informacji o jądrze i sprzęcie
+- tmp                  - Katalog tymczasowy (kasowany po restarcie) - dla aplikacji
+- usr                  - Główna przestrzeń na programy i biblioteki użytkownika(czyli "dodatnowe rzeczy" do działania systemu)
+- var                  - Dane zmienne: logi (/var/log), maile, spoolery, cache
+
+zawartość folderu użytkownika:
+
+.bash_history              - Hisotira poleceń wpisanych do terminalu - zapisuje się po wylogowaniu
+.bash_logout               - Skrypt wykonwany automatycznie po wylogowaniu z sesji, na przykład czyści ekan - clear)
+.bashrc                    - plik konfiguracyjny dla basha - uruchamiany przy każdym otwarciu terminala. Możemy tu dodawać litery, aliasy, zmienne, kolorowe prompty itd
+.cache                     - Dane tymczasowe i chache aplikacji - np. terminal, edytory, przeglądarki CLI
+.cloud-locale-test.skip    - Plik tworzony przez system (np. DigitalOcean, Ubuntu Cloud Init) - oznacza, że test lokalizacji językowej został pominięty
+.lesshst                   - Historia przeglądatki tekstu lass (np. wyszukiwane słowa)
+.local                     - Dane użytkownika - np. lokalnie zainstalowane programy ( ~/.local/bin), dane aplikacji (~/.local/share)
+.profile                   - Skrypt logowania - wykonywany tylko raz przy logowaniu użytkownika (dotyczy ogólnych  ustawień środowiska)
+.sudo_as_admin_successful  - Informacja, że pierwszy raz udało się użyc sudo - czysto informacyjnie (można usunąć bez konsekwencji)
+
+drwxrwxrwx - wytłumaczenie
+
+d            - może tutaj też być d-katalog, "-" - zwykły plik, 1 - link symboliczny 
+pierwsze rwx - uprawnienia właściciela pliku
+drugie   rwx - uprawnienia grupy właściciela
+trzecie  rwx - uprawnienia innych użytkowników
+
+mkdir - tworzenie nowych folderów
