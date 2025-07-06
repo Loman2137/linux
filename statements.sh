@@ -2,9 +2,11 @@
 
 age=20
 
-if (( age > 10 && age < 30 ))
+#if [ "$age" -lt 10 -o "$age" -lt 30 ]
+#if [[ "$age" -lt 10 || "$age" -lt 30 ]]
+if [ "$age" -lt 10 ] || [ "$age" -lt 30 ]
 then
-	echo "jebać zielinskiego syna diabła"
+	echo "true"
 else
-	echo "jebać ziela ale druga wersja"
+	echo "false"
 fi
